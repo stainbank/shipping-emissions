@@ -1,0 +1,308 @@
+first_row = 3 
+
+[columns]
+
+  [columns.imo_number]
+  index = 0
+  original_name = "IMO Number"
+  type = "int"
+
+  [columns.name]
+  index = 1
+  original_name = "Name"
+  type = "str"
+
+  [columns.ship_type]
+  index = 2
+  original_name = "Ship type"
+  type = "str"
+
+  [columns.reporting_period]
+  index = 3
+  original_name = "Reporting Period"
+  type = "float"
+
+  [columns.technical_efficiency]
+  index = 4
+  original_name = "Technical efficiency"
+  type = "str"
+
+  [columns.port_of_registry]
+  index = 5
+  original_name = "Port of Registry"
+  type = "str"
+
+  [columns.home_port]
+  index = 6
+  original_name = "Home Port"
+  type = "str"
+
+  [columns.ice_class]
+  index = 7
+  original_name = "Ice Class"
+  type = "str"
+
+  [columns.doc_issue_date]
+  index = 8
+  original_name = "DoC issue date"
+  type = "str"
+
+  [columns.doc_expiry_date]
+  index = 9
+  original_name = "DoC expiry date"
+  type = "str"
+
+  [columns.verifier_number]
+  index = 10
+  original_name = "Verifier Number"
+  type = "str"
+
+  [columns.verifier_name]
+  index = 11
+  original_name = "Verifier Name"
+  type = "str"
+
+  [columns.verifier_nab]
+  index = 12
+  original_name = "Verifier NAB"
+  type = "str"
+
+  [columns.verifier_address]
+  index = 13
+  original_name = "Verifier Address"
+  type = "str"
+
+  [columns.verifier_city]
+  index = 14
+  original_name = "Verifier City"
+  type = "str"
+
+  [columns.verifier_accreditation_number]
+  index = 15
+  original_name = "Verifier Accreditation number"
+  type = "str"
+
+  [columns.verifier_country]
+  index = 16
+  original_name = "Verifier Country"
+  type = "str"
+
+  [columns.monitoring_method_a]
+  index = 17
+  original_name = "A"
+  type = "str"
+
+  [columns.monitoring_method_b]
+  index = 18
+  original_name = "B"
+  type = "str"
+
+  [columns.monitoring_method_c]
+  index = 19
+  original_name = "C"
+  type = "str"
+
+  [columns.monitoring_method_d]
+  index = 20
+  original_name = "D"
+  type = "str"
+
+  [columns.total_fuel_consumption]
+  index = 21
+  original_name = "Total fuel consumption [m tonnes]"
+  type = "float"
+
+  [columns.fuel_consumptions_assigned_to_on_laden]
+  index = 22
+  original_name = "Fuel consumptions assigned to On laden [m tonnes]"
+  type = "float"
+
+  [columns.total_co2_emissions]
+  index = 23
+  original_name = "Total CO₂ emissions [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_from_all_voyages_between_ports_under_a_ms_jurisdiction]
+  index = 24
+  original_name = "CO₂ emissions from all voyages between ports under a MS jurisdiction [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_from_all_voyages_which_departed_from_ports_under_a_ms_jurisdiction]
+  index = 25
+  original_name = "CO₂ emissions from all voyages which departed from ports under a MS jurisdiction [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_from_all_voyages_to_ports_under_a_ms_jurisdiction]
+  index = 26
+  original_name = "CO₂ emissions from all voyages to ports under a MS jurisdiction [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_which_occurred_within_ports_under_a_ms_jurisdiction_at_berth]
+  index = 27
+  original_name = "CO₂ emissions which occurred within ports under a MS jurisdiction at berth [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_assigned_to_passenger_transport]
+  index = 28
+  original_name = "CO₂ emissions assigned to Passenger transport [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_assigned_to_freight_transport]
+  index = 29
+  original_name = "CO₂ emissions assigned to Freight transport [m tonnes]"
+  type = "float"
+
+  [columns.co2_emissions_assigned_to_on_laden]
+  index = 30
+  original_name = "CO₂ emissions assigned to On laden [m tonnes]"
+  type = "float"
+
+  [columns.annual_total_time_spent_at_sea]
+  index = 31
+  original_name = "Annual Total time spent at sea [hours]"
+  type = "float"
+
+  [columns.annual_average_fuel_consumption_per_distance]
+  index = 32
+  original_name = "Annual average Fuel consumption per distance [kg / n mile]"
+  type = "str"
+
+  [columns.annual_average_fuel_consumption_per_transport_work_mass]
+  index = 33
+  original_name = "Annual average Fuel consumption per transport work (mass) [g / m tonnes · n miles]"
+  type = "str"
+
+  [columns.annual_average_fuel_consumption_per_transport_work_volume]
+  index = 34
+  original_name = "Annual average Fuel consumption per transport work (volume) [g / m³ · n miles]"
+  type = "str"
+
+  [columns.annual_average_fuel_consumption_per_transport_work_dwt]
+  index = 35
+  original_name = "Annual average Fuel consumption per transport work (dwt) [g / dwt carried · n miles]"
+  type = "str"
+
+  [columns.annual_average_fuel_consumption_per_transport_work_pax]
+  index = 36
+  original_name = "Annual average Fuel consumption per transport work (pax) [g / pax · n miles]"
+  type = "str"
+
+  [columns.annual_average_fuel_consumption_per_transport_work_freight]
+  index = 37
+  original_name = "Annual average Fuel consumption per transport work (freight) [g / m tonnes · n miles]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_distance]
+  index = 38
+  original_name = "Annual average CO₂ emissions per distance [kg CO₂ / n mile]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_transport_work_mass]
+  index = 39
+  original_name = "Annual average CO₂ emissions per transport work (mass) [g CO₂ / m tonnes · n miles]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_transport_work_volume]
+  index = 40
+  original_name = "Annual average CO₂ emissions per transport work (volume) [g CO₂ / m³ · n miles]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_transport_work_dwt]
+  index = 41
+  original_name = "Annual average CO₂ emissions per transport work (dwt) [g CO₂ / dwt carried · n miles]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_transport_work_pax]
+  index = 42
+  original_name = "Annual average CO₂ emissions per transport work (pax) [g CO₂ / pax · n miles]"
+  type = "str"
+
+  [columns.annual_average_co2_emissions_per_transport_work_freight]
+  index = 43
+  original_name = "Annual average CO₂ emissions per transport work (freight) [g CO₂ / m tonnes · n miles]"
+  type = "str"
+
+  [columns.through_ice]
+  index = 44
+  original_name = "Through ice [n miles]"
+  type = "float"
+
+  [columns.total_time_spent_at_sea]
+  index = 45
+  original_name = "Total time spent at sea [hours]"
+  type = "float"
+
+  [columns.total_time_spent_at_sea_through_ice]
+  index = 46
+  original_name = "Total time spent at sea through ice [hours]"
+  type = "float"
+
+  [columns.fuel_consumption_per_distance_on_laden_voyages]
+  index = 47
+  original_name = "Fuel consumption per distance on laden voyages [kg / n mile]"
+  type = "str"
+
+  [columns.fuel_consumption_per_transport_work_mass_on_laden_voyages]
+  index = 48
+  original_name = "Fuel consumption per transport work (mass) on laden voyages [g / m tonnes · n miles]"
+  type = "str"
+
+  [columns.fuel_consumption_per_transport_work_volume_on_laden_voyages]
+  index = 49
+  original_name = "Fuel consumption per transport work (volume) on laden voyages [g / m³ · n miles]"
+  type = "str"
+
+  [columns.fuel_consumption_per_transport_work_dwt_on_laden_voyages]
+  index = 50
+  original_name = "Fuel consumption per transport work (dwt) on laden voyages [g / dwt carried · n miles]"
+  type = "str"
+
+  [columns.fuel_consumption_per_transport_work_pax_on_laden_voyages]
+  index = 51
+  original_name = "Fuel consumption per transport work (pax) on laden voyages [g / pax · n miles]"
+  type = "float"
+
+  [columns.fuel_consumption_per_transport_work_freight_on_laden_voyages]
+  index = 52
+  original_name = "Fuel consumption per transport work (freight) on laden voyages [g / m tonnes · n miles]"
+  type = "float"
+
+  [columns.co2_emissions_per_distance_on_laden_voyages]
+  index = 53
+  original_name = "CO₂ emissions per distance on laden voyages [kg CO₂ / n mile]"
+  type = "str"
+
+  [columns.co2_emissions_per_transport_work_mass_on_laden_voyages]
+  index = 54
+  original_name = "CO₂ emissions per transport work (mass) on laden voyages [g CO₂ / m tonnes · n miles]"
+  type = "str"
+
+  [columns.co2_emissions_per_transport_work_volume_on_laden_voyages]
+  index = 55
+  original_name = "CO₂ emissions per transport work (volume) on laden voyages [g CO₂ / m³ · n miles]"
+  type = "str"
+
+  [columns.co2_emissions_per_transport_work_dwt_on_laden_voyages]
+  index = 56
+  original_name = "CO₂ emissions per transport work (dwt) on laden voyages [g CO₂ / dwt carried · n miles]"
+  type = "str"
+
+  [columns.co2_emissions_per_transport_work_pax_on_laden_voyages]
+  index = 57
+  original_name = "CO₂ emissions per transport work (pax) on laden voyages [g CO₂ / pax · n miles]"
+  type = "float"
+
+  [columns.co2_emissions_per_transport_work_freight_on_laden_voyages]
+  index = 58
+  original_name = "CO₂ emissions per transport work (freight) on laden voyages [g CO₂ / m tonnes · n miles]"
+  type = "float"
+
+  [columns.additional_information_to_facilitate_the_understanding_of_the_reported_average_operational_energy_efficiency_indicators]
+  index = 59
+  original_name = "Additional information to facilitate the understanding of the reported average operational energy efficiency indicators"
+  type = "str"
+
+  [columns.average_density_of_the_cargo_transported]
+  index = 60
+  original_name = "Average density of the cargo transported [m tonnes / m³]"
+  type = "float"
