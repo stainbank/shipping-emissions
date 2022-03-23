@@ -9,7 +9,9 @@ class XlsxColumn(pydantic.BaseModel):
     index: int
     name: str
     original_name: typing.Optional[str] = None
+    # Should factor out type information to it's own model
     type: str
+    nullable: bool = True
 
     class Config:
         frozen = True
