@@ -13,4 +13,4 @@ def run_pipeline(dataset_name: str, schema_file: Path, data_files: Iterable[Path
     for data_file in data_files:
         raw_data = read_xlsx(data_file, schema)
         parsed_data = parse_xlsx(raw_data, schema)
-        db.insert(parsed_data, schema, dataset_name)
+        db.append(parsed_data, schema, dataset_name)

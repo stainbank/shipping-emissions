@@ -10,7 +10,7 @@ fastapi = "^0.75.0"
 strawberry-graphql = {extras = ["fastapi"], version = "^0.103.8"}
 toml = "^0.10.2"
 openpyxl = "^3.0.9"
-pandas = "^1.4.1"
+pyarrow = "^7.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
