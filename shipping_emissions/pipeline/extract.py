@@ -1,15 +1,13 @@
-import collections.abc
-import pathlib
-import typing
+from collections.abc import Iterator
+from pathlib import Path
+from typing import Optional
 
 import openpyxl
 
 from shipping_emissions.pipeline.schema import XlsxSchema
 
 
-def read_xlsx(
-    xlsx_file: pathlib.Path, schema: XlsxSchema
-) -> collections.abc.Iterator[tuple[typing.Optional[str], ...]]:
+def read_xlsx(xlsx_file: Path, schema: XlsxSchema) -> Iterator[tuple[Optional[str], ...]]:
     """Yield rows in `xlsx_file` with non-null values coerced to str."""
     # Ideally would use read_only=True but it fails to load the entire workbook
     workbook = openpyxl.load_workbook(xlsx_file)

@@ -1,5 +1,5 @@
-import pathlib
-import typing
+from pathlib import Path
+from typing import Optional
 
 import pydantic
 import toml
@@ -8,7 +8,7 @@ import toml
 class XlsxColumn(pydantic.BaseModel):
     index: int
     name: str
-    original_name: typing.Optional[str] = None
+    original_name: Optional[str] = None
     # Should factor out type information to it's own model
     type: str
     nullable: bool = True
@@ -22,7 +22,7 @@ class XlsxSchema(pydantic.BaseModel):
     columns: set[XlsxColumn]
 
 
-def load_xlsx_schema(schema_file: pathlib.Path) -> XlsxSchema:
+def load_xlsx_schema(schema_file: Path) -> XlsxSchema:
     schema_def = toml.load(schema_file)
     column_defs = schema_def.pop("columns")
     columns = set(XlsxColumn(name=name, **column_def) for name, column_def in column_defs.items())
