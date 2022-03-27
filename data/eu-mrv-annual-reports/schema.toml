@@ -20,7 +20,7 @@ first_row = 3
   [columns.reporting_period]
   index = 3
   original_name = "Reporting Period"
-  type = "float"
+  type = "int"
 
   [columns.technical_efficiency]
   index = 4
