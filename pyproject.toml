@@ -6,11 +6,11 @@ authors = ["Chad Stainbank <20968201+stainbank@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.75.0"
-strawberry-graphql = {extras = ["fastapi"], version = "^0.103.8"}
 toml = "^0.10.2"
 openpyxl = "^3.0.9"
 pyarrow = "^7.0.0"
+strawberry-graphql = {extras = ["debug-server"], version = "^0.103.9"}
+pydantic = "^1.9.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
