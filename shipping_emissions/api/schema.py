@@ -1,4 +1,6 @@
-from typing import Any, Dict, Optional
+import dataclasses
+from typing import Any, Dict, Mapping, Optional
+
 import pyarrow as pa
 import pyarrow.compute as pc
 import strawberry
@@ -8,6 +10,9 @@ from shipping_emissions.db import db
 
 LATEST_REPORTING_PERIOD = 2020
 DATASET_NAME = "eu-mrv"
+TABLE_TO_SHIP_FIELD_NAMES: Dict[str, str] = {
+    "name": "name",  # temporary example
+}
 
 
 class DatabaseSession(strawberry.extensions.Extension):
@@ -17,19 +22,18 @@ class DatabaseSession(strawberry.extensions.Extension):
 
 @strawberry.type
 class Ship:
-    data: strawberry.Private[Dict[str, Any]]
+    @classmethod
+    def from_data(cls, data: Mapping[str, Any]):
+        fields = {}
+        for field in dataclasses.fields(cls):
+            data_field_name = TABLE_TO_SHIP_FIELD_NAMES.get(field.name, field.name)
+            value = data[data_field_name]
+            fields[field.name] = value
+        return cls(**fields)
 
-    @strawberry.field
-    def imo_number(self) -> str:
-        return self.data["imo_number"]
-
-    @strawberry.field
-    def reporting_period(self) -> int:
-        return self.data["reporting_period"]
-
-    @strawberry.field
-    def name(self) -> str:
-        return self.data["name"]
+    imo_number: str
+    reporting_period: int
+    name: str
 
 
 @strawberry.type
@@ -45,7 +49,7 @@ class Query:
         constraints = {"imo_number": imo_number, "reporting_period": reporting_period}
         df = _filter_df(info.context["df"], **constraints)
         (row,) = df.to_pylist()  # TODO: handle 0 or >1 results
-        return Ship(row)
+        return Ship.from_data(row)
 
     @strawberry.field
     def ships(
@@ -54,10 +58,9 @@ class Query:
         reporting_period: Optional[int] = None,
         name: Optional[str] = None,
     ) -> list[Ship]:
-        constraints = {}
         df = _filter_df(info.context["df"], **info.variable_values)
         # TODO: Implement pagination
-        return [Ship(row) for row in df.to_pylist()]
+        return [Ship.from_data(row) for row in df.to_pylist()]
 
 
 def _filter_df(df: pa.Table, **constraints: Dict[str, Any]) -> pa.Table:
