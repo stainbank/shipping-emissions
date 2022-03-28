@@ -12,6 +12,10 @@ LATEST_REPORTING_PERIOD = 2020
 DATASET_NAME = "eu-mrv"
 TABLE_TO_SHIP_FIELD_NAMES: Dict[str, str] = {
     "name": "name",  # temporary example
+    "additional_information": (
+        "additional_information_to_facilitate_the_understanding_of_the_"
+        "reported_average_operational_energy_efficiency_indicators"
+    ),
 }
 
 
@@ -31,9 +35,69 @@ class Ship:
             fields[field.name] = value
         return cls(**fields)
 
-    imo_number: str
-    reporting_period: int
-    name: str
+    imo_number: Optional[str]
+    reporting_period: Optional[int]
+    ship_type: Optional[str]
+    name: Optional[str]
+    technical_efficiency: Optional[str]
+    port_of_registry: Optional[str]
+    home_port: Optional[str]
+    ice_class: Optional[str]
+    doc_issue_date: Optional[str]
+    doc_expiry_date: Optional[str]
+    verifier_number: Optional[str]
+    verifier_name: Optional[str]
+    verifier_nab: Optional[str]
+    verifier_address: Optional[str]
+    verifier_city: Optional[str]
+    verifier_accreditation_number: Optional[str]
+    verifier_country: Optional[str]
+    monitoring_method_a: Optional[str]
+    monitoring_method_b: Optional[str]
+    monitoring_method_c: Optional[str]
+    monitoring_method_d: Optional[str]
+    total_fuel_consumption: Optional[float]
+    fuel_consumptions_assigned_to_on_laden: Optional[float]
+    total_co2_emissions: Optional[float]
+    co2_emissions_from_all_voyages_between_ports_under_a_ms_jurisdiction: Optional[float]
+    co2_emissions_from_all_voyages_which_departed_from_ports_under_a_ms_jurisdiction: Optional[
+        float
+    ]
+    co2_emissions_from_all_voyages_to_ports_under_a_ms_jurisdiction: Optional[float]
+    co2_emissions_which_occurred_within_ports_under_a_ms_jurisdiction_at_berth: Optional[float]
+    co2_emissions_assigned_to_passenger_transport: Optional[float]
+    co2_emissions_assigned_to_freight_transport: Optional[float]
+    co2_emissions_assigned_to_on_laden: Optional[float]
+    annual_total_time_spent_at_sea: Optional[float]
+    annual_average_fuel_consumption_per_distance: Optional[str]
+    annual_average_fuel_consumption_per_transport_work_mass: Optional[str]
+    annual_average_fuel_consumption_per_transport_work_volume: Optional[str]
+    annual_average_fuel_consumption_per_transport_work_dwt: Optional[str]
+    annual_average_fuel_consumption_per_transport_work_pax: Optional[str]
+    annual_average_fuel_consumption_per_transport_work_freight: Optional[str]
+    annual_average_co2_emissions_per_distance: Optional[str]
+    annual_average_co2_emissions_per_transport_work_mass: Optional[str]
+    annual_average_co2_emissions_per_transport_work_volume: Optional[str]
+    annual_average_co2_emissions_per_transport_work_dwt: Optional[str]
+    annual_average_co2_emissions_per_transport_work_pax: Optional[str]
+    annual_average_co2_emissions_per_transport_work_freight: Optional[str]
+    through_ice: Optional[float]
+    total_time_spent_at_sea: Optional[float]
+    total_time_spent_at_sea_through_ice: Optional[float]
+    fuel_consumption_per_distance_on_laden_voyages: Optional[str]
+    fuel_consumption_per_transport_work_mass_on_laden_voyages: Optional[str]
+    fuel_consumption_per_transport_work_volume_on_laden_voyages: Optional[str]
+    fuel_consumption_per_transport_work_dwt_on_laden_voyages: Optional[str]
+    fuel_consumption_per_transport_work_pax_on_laden_voyages: Optional[float]
+    fuel_consumption_per_transport_work_freight_on_laden_voyages: Optional[float]
+    co2_emissions_per_distance_on_laden_voyages: Optional[str]
+    co2_emissions_per_transport_work_mass_on_laden_voyages: Optional[str]
+    co2_emissions_per_transport_work_volume_on_laden_voyages: Optional[str]
+    co2_emissions_per_transport_work_dwt_on_laden_voyages: Optional[str]
+    co2_emissions_per_transport_work_pax_on_laden_voyages: Optional[float]
+    co2_emissions_per_transport_work_freight_on_laden_voyages: Optional[float]
+    additional_information: Optional[str]
+    average_density_of_the_cargo_transported: Optional[float]
 
 
 @strawberry.type

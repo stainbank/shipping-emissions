@@ -56,6 +56,21 @@ def _cast_int(value: Optional[str], nullable: bool) -> Optional[int]:
             raise e
 
 
+@overload
+def _cast_str(value: str, nullable: Literal[False]) -> str:
+    ...
+
+
+@overload
+def _cast_str(value: None, nullable: Literal[True]) -> None:
+    ...
+
+
+def _cast_str(value: Optional[str], nullable: bool) -> Optional[str]:
+    return str(value) if value is not None else None
+
+
 _TYPE_CASTERS: Callable[[Optional[str], bool], Any] = {
     "int": _cast_int,
+    "str": _cast_str,
 }

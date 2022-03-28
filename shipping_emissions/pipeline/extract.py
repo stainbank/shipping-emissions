@@ -9,9 +9,10 @@ from shipping_emissions.pipeline.schema import XlsxSchema
 
 logger = logging.getLogger(__name__)
 
+
 def read_xlsx(xlsx_file: Path, schema: XlsxSchema) -> Iterator[tuple[Optional[str], ...]]:
     """Yield rows in `xlsx_file` with non-null values coerced to str."""
-    if xlsx_file.suffix != '.xlsx':
+    if xlsx_file.suffix != ".xlsx":
         logger.warning(f"Skipping {xlsx_file} (not an Excel file)")
         return
     logger.info(f"Reading {xlsx_file}")
