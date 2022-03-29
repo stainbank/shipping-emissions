@@ -122,7 +122,12 @@ class Query:
         reporting_period: Optional[int] = None,
         name: Optional[str] = None,
     ) -> list[Ship]:
-        df = _filter_df(info.context["df"], **info.variable_values)
+        constraints = {
+            "imo_number": imo_number,
+            "reporting_period": reporting_period,
+            "name": name,
+        }
+        df = _filter_df(info.context["df"], **constraints)
         # TODO: Implement pagination
         return [Ship.from_data(row) for row in df.to_pylist()]
 
